@@ -1,0 +1,248 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #64c6ff, #ab98ff);
+}
+
+
+li {
+  display: inline;
+  list-style-type: none;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: 3px 3px 4px rgba(110, 99, 99, 0.212);
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+  margin: 0.2rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+li:hover{
+  background:rgba(255, 255, 255, 0.7); /*where 0.5 stands for 50% opacity*/
+}
+
+li a {
+  color: #8b33ff;
+  font-weight: bold;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 1.6em;   
+  text-shadow: 0.02em 0.02em 0.06em rgb(110, 110, 110);
+}
+
+#meni {
+  display: flex;
+}
+
+#grupe {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+  margin: 0.2rem;
+  padding: 0.6rem;
+}
+
+#grupe table {
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  box-shadow: 6px 6px 20px rgba(110, 99, 99, 0.212);
+  width: 100%;
+  padding: 3%;
+}
+
+#grupe th, td {
+  text-align: center;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #451f77;
+  padding-bottom: 1rem;
+}
+
+#grupe th {
+  font-weight: bold;
+  font-size: 1.1em;
+  padding-right: 0.2em;
+}
+
+#studenti {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+  margin: 0.1rem;
+  padding: 0.6rem;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 0.6rem;
+}
+
+.student-grid > div {
+  display: flex;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  box-shadow: 6px 6px 20px rgba(110, 99, 99, 0.212);
+  align-items: center;
+  justify-content: center;
+}
+
+.tekst {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #451f77;
+  font-size: 1.1em;
+  gap: 0.5em;
+}
+
+.tekst span {
+  font-size: 0.7em;
+}
+
+.student-grid > div::before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: calc(3/4 * 100%);
+}
+
+
+@media screen and (min-width: 800px) { /*Širina >= 800px*/
+  body {
+    background-color: blue;
+  }
+
+  #meni {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+
+  #studenti {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    
+  }
+
+  #grupe {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .container { 
+    grid-template-rows: 0.22fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+  }
+
+}
+
+
+  
+@media screen and (min-width: 500px) and (max-width: 799.5px){ /*Širina >= 500px*/
+  body {
+    background-color: green;
+  }
+
+  #meni {
+  }
+
+  #grupe {
+  }
+
+  #studenti {
+  }
+
+  .container { 
+    grid-template-rows: 0.3fr 0.7fr 1.5fr;
+    grid-template-columns: repeat(1, 1fr); 
+  }
+
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+}
+
+
+@media screen and (max-width: 499.5px) { /*Širina < 500px*/
+  body {
+    background-color: red;
+  }
+
+  #meni {
+    flex-direction: column;
+  }
+
+  #meni ul li{
+    text-align: center;
+  }
+
+  ul {
+    background: transparent;
+  }
+
+  #grupe {
+  }
+
+  table tr th:nth-child(2),
+  table tr td:nth-child(2),
+  table tr th:nth-child(3),
+  table tr td:nth-child(3) {
+    display: none;
+  }
+
+  #studenti {
+  }
+
+  .container { 
+    grid-template-rows: 0.3fr 0.7fr 1.5fr;
+    grid-template-columns: repeat(1, 1fr); 
+  }
+
+  li {
+    display: list-item;
+    list-style-type: none;
+    padding-bottom: 0.6em;
+    padding-top: 0.2em;
+  }
+
+  li a {
+    padding-left: 0em;
+  }
+
+}
+
+
+

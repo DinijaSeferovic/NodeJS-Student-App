@@ -1,0 +1,45 @@
+@objects
+  container css .container
+  input css .container input
+  label css .container label
+  button css .container button
+  header css h1
+  body body
+
+
+= Width section =
+	container:
+		width 95 to 97% of body/width
+    button:
+        width 50 to 52% of container/width
+
+= Inside section =
+	input:
+		inside container
+	label:
+		inside container
+	button:
+		inside container
+
+= Above section =
+	header:
+		above container
+
+= Below section =
+	button:
+		below input
+    
+    input:
+        below label
+
+= Visible section =
+	header:
+		visible
+	container:
+		visible
+	label:
+		visible
+	input:
+		visible
+	button:
+		visible

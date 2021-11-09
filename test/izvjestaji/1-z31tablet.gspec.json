@@ -1,0 +1,268 @@
+{
+  "testId" : "1-z31tablet.gspec",
+  "name" : "z31Tablet.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  z31Tablet.gspec --url http://localhost/mojRepozitorij.html --size 600x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: z31Tablet.gspec included tags: ",
+          "status" : "info",
+          "time" : 1636488598025,
+          "sections" : [ {
+            "name" : "Width section",
+            "place" : {
+              "filePath" : "z31Tablet.gspec",
+              "lineNumber" : 10
+            },
+            "objects" : [ {
+              "name" : "container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 12
+                },
+                "name" : "width 78 to 80 % of body/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "container",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "container",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "78 to 80% [458 to 470px]",
+                  "realDistance" : "80% [471px]"
+                } ],
+                "highlight" : [ "container" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Inside section",
+            "place" : {
+              "filePath" : "z31Tablet.gspec",
+              "lineNumber" : 14
+            },
+            "objects" : [ {
+              "name" : "input",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "inside container",
+                "meta" : [ ],
+                "highlight" : [ "input", "container" ]
+              } ]
+            }, {
+              "name" : "label",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "inside container",
+                "meta" : [ ],
+                "highlight" : [ "label", "container" ]
+              } ]
+            }, {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "inside container",
+                "meta" : [ ],
+                "highlight" : [ "button", "container" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Left of section",
+            "place" : {
+              "filePath" : "z31Tablet.gspec",
+              "lineNumber" : 22
+            },
+            "objects" : [ {
+              "name" : "label",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "left-of input",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "32px"
+                } ],
+                "highlight" : [ "label", "input" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Above section",
+            "place" : {
+              "filePath" : "z31Tablet.gspec",
+              "lineNumber" : 26
+            },
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "above container",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "container",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "header", "container" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Below section",
+            "place" : {
+              "filePath" : "z31Tablet.gspec",
+              "lineNumber" : 30
+            },
+            "objects" : [ {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "below label",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "label",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "191px"
+                } ],
+                "highlight" : [ "button", "label" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Visible section",
+            "place" : {
+              "filePath" : "z31Tablet.gspec",
+              "lineNumber" : 34
+            },
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "visible",
+                "highlight" : [ "header" ]
+              } ]
+            }, {
+              "name" : "container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "visible",
+                "highlight" : [ "container" ]
+              } ]
+            }, {
+              "name" : "label",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "visible",
+                "highlight" : [ "label" ]
+              } ]
+            }, {
+              "name" : "input",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "visible",
+                "highlight" : [ "input" ]
+              } ]
+            }, {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Tablet.gspec",
+                  "lineNumber" : 44
+                },
+                "name" : "visible",
+                "highlight" : [ "button" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "container" : {
+              "area" : [ 8, 109, 471, 323 ]
+            },
+            "button" : {
+              "area" : [ 40, 362, 160, 38 ]
+            },
+            "input" : {
+              "area" : [ 232, 141, 215, 41 ]
+            },
+            "header" : {
+              "area" : [ 8, 0, 580, 101 ]
+            },
+            "label" : {
+              "area" : [ 40, 153, 160, 18 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1636488596340,
+        "type" : "node"
+      } ],
+      "time" : 1636488589492,
+      "type" : "node"
+    } ]
+  }
+}

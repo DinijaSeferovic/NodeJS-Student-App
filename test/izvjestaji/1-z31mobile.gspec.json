@@ -1,0 +1,284 @@
+{
+  "testId" : "1-z31mobile.gspec",
+  "name" : "z31Mobile.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  z31Mobile.gspec --url http://localhost/mojRepozitorij.html --size 490x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: z31Mobile.gspec included tags: ",
+          "status" : "info",
+          "time" : 1636489058782,
+          "sections" : [ {
+            "name" : "Width section",
+            "place" : {
+              "filePath" : "z31Mobile.gspec",
+              "lineNumber" : 10
+            },
+            "objects" : [ {
+              "name" : "container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 12
+                },
+                "name" : "width 95 to 97% of body/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "container",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "container",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "95 to 97% [455 to 464px]",
+                  "realDistance" : "96% [463px]"
+                } ],
+                "highlight" : [ "container" ]
+              } ]
+            }, {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 14
+                },
+                "name" : "width 50 to 52% of container/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "button",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "50 to 52% [231 to 240px]",
+                  "realDistance" : "51% [239px]"
+                } ],
+                "highlight" : [ "button" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Inside section",
+            "place" : {
+              "filePath" : "z31Mobile.gspec",
+              "lineNumber" : 16
+            },
+            "objects" : [ {
+              "name" : "input",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "inside container",
+                "meta" : [ ],
+                "highlight" : [ "input", "container" ]
+              } ]
+            }, {
+              "name" : "label",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "inside container",
+                "meta" : [ ],
+                "highlight" : [ "label", "container" ]
+              } ]
+            }, {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "inside container",
+                "meta" : [ ],
+                "highlight" : [ "button", "container" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Above section",
+            "place" : {
+              "filePath" : "z31Mobile.gspec",
+              "lineNumber" : 24
+            },
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 26
+                },
+                "name" : "above container",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "container",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "header", "container" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Below section",
+            "place" : {
+              "filePath" : "z31Mobile.gspec",
+              "lineNumber" : 28
+            },
+            "objects" : [ {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "below input",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "input",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "280px"
+                } ],
+                "highlight" : [ "button", "input" ]
+              } ]
+            }, {
+              "name" : "input",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "below label",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "label",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "33px"
+                } ],
+                "highlight" : [ "input", "label" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Visible section",
+            "place" : {
+              "filePath" : "z31Mobile.gspec",
+              "lineNumber" : 35
+            },
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "visible",
+                "highlight" : [ "header" ]
+              } ]
+            }, {
+              "name" : "container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 39
+                },
+                "name" : "visible",
+                "highlight" : [ "container" ]
+              } ]
+            }, {
+              "name" : "label",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "visible",
+                "highlight" : [ "label" ]
+              } ]
+            }, {
+              "name" : "input",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 43
+                },
+                "name" : "visible",
+                "highlight" : [ "input" ]
+              } ]
+            }, {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z31Mobile.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "visible",
+                "highlight" : [ "button" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "container" : {
+              "area" : [ 8, 109, 463, 474 ]
+            },
+            "button" : {
+              "area" : [ 119, 513, 239, 38 ]
+            },
+            "input" : {
+              "area" : [ 40, 192, 399, 41 ]
+            },
+            "header" : {
+              "area" : [ 8, 0, 471, 101 ]
+            },
+            "label" : {
+              "area" : [ 40, 141, 399, 18 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1636489056818,
+        "type" : "node"
+      } ],
+      "time" : 1636489051802,
+      "type" : "node"
+    } ]
+  }
+}

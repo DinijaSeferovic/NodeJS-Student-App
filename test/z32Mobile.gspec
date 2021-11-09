@@ -1,0 +1,84 @@
+@objects
+  zadaci css .container-zadaci
+  error css .container-error
+  inputzad css .container-zadaci input
+  inputerr css .container-error input
+  labelzad css .container-zadaci label
+  labelerr css .container-error label
+  buttonzad css .container-zadaci button
+  buttonerr css .container-error button
+  textkom css .container-zadaci textarea
+  textlog css .container-error textarea
+  header css h1
+  body body
+
+
+= Width section =
+	zadaci:
+		width 95 to 97 % of body/width
+	error:
+		width 95 to 97 % of body/width
+    buttonzad:
+        width 50 to 52% of zadaci/width
+    buttonerr:
+        width 50 to 52% of error/width
+
+= Inside section =
+	inputzad:
+		inside zadaci
+	inputerr:
+		inside error
+	labelzad:
+		inside zadaci
+    labelerr:
+        inside error
+	buttonzad:
+		inside zadaci
+    buttonerr:
+        inside error
+    textkom:
+        inside zadaci
+    textlog:
+        inside error
+
+= Above section =
+	header:
+		above zadaci
+    header:
+        above error
+    zadaci:
+        above error
+    labelerr:
+        above inputerr
+    labelzad:
+        above inputzad
+
+= Below section =
+	buttonzad:
+		below textkom
+    buttonerr:
+        below inputerr
+
+= Visible section =
+	header:
+		visible
+	zadaci:
+		visible
+	labelzad:
+		visible
+	inputzad:
+		visible
+	buttonzad:
+		visible
+    textkom:
+		visible
+	error:
+		visible
+	labelerr:
+		visible
+	inputerr:
+		visible
+	buttonerr:
+		visible
+    textlog:
+        visible

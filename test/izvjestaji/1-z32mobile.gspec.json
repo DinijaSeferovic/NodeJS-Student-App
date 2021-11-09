@@ -1,0 +1,563 @@
+{
+  "testId" : "1-z32mobile.gspec",
+  "name" : "z32Mobile.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  z32Mobile.gspec --url http://localhost/zadaci.html --size 490x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: z32Mobile.gspec included tags: ",
+          "status" : "info",
+          "time" : 1636492522905,
+          "sections" : [ {
+            "name" : "Width section",
+            "place" : {
+              "filePath" : "z32Mobile.gspec",
+              "lineNumber" : 16
+            },
+            "objects" : [ {
+              "name" : "zadaci",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "width 95 to 97 % of body/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "zadaci",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "zadaci",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "95 to 97% [438 to 448px]",
+                  "realDistance" : "96% [446px]"
+                } ],
+                "highlight" : [ "zadaci" ]
+              } ]
+            }, {
+              "name" : "error",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "width 95 to 97 % of body/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "error",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "error",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "95 to 97% [438 to 448px]",
+                  "realDistance" : "96% [446px]"
+                } ],
+                "highlight" : [ "error" ]
+              } ]
+            }, {
+              "name" : "buttonzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "width 50 to 52% of zadaci/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "buttonzad",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "buttonzad",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "50 to 52% [223 to 231px]",
+                  "realDistance" : "51% [229px]"
+                } ],
+                "highlight" : [ "buttonzad" ]
+              } ]
+            }, {
+              "name" : "buttonerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "width 50 to 52% of error/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "buttonerr",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "buttonerr",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "50 to 52% [223 to 231px]",
+                  "realDistance" : "51% [229px]"
+                } ],
+                "highlight" : [ "buttonerr" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Inside section",
+            "place" : {
+              "filePath" : "z32Mobile.gspec",
+              "lineNumber" : 26
+            },
+            "objects" : [ {
+              "name" : "inputzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "inside zadaci",
+                "meta" : [ ],
+                "highlight" : [ "inputzad", "zadaci" ]
+              } ]
+            }, {
+              "name" : "inputerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "inside error",
+                "meta" : [ ],
+                "highlight" : [ "inputerr", "error" ]
+              } ]
+            }, {
+              "name" : "labelzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "inside zadaci",
+                "meta" : [ ],
+                "highlight" : [ "labelzad", "zadaci" ]
+              } ]
+            }, {
+              "name" : "labelerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "inside error",
+                "meta" : [ ],
+                "highlight" : [ "labelerr", "error" ]
+              } ]
+            }, {
+              "name" : "buttonzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "inside zadaci",
+                "meta" : [ ],
+                "highlight" : [ "buttonzad", "zadaci" ]
+              } ]
+            }, {
+              "name" : "buttonerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "inside error",
+                "meta" : [ ],
+                "highlight" : [ "buttonerr", "error" ]
+              } ]
+            }, {
+              "name" : "textkom",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "inside zadaci",
+                "meta" : [ ],
+                "highlight" : [ "textkom", "zadaci" ]
+              } ]
+            }, {
+              "name" : "textlog",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "inside error",
+                "meta" : [ ],
+                "highlight" : [ "textlog", "error" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Above section",
+            "place" : {
+              "filePath" : "z32Mobile.gspec",
+              "lineNumber" : 44
+            },
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "above zadaci",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "zadaci",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "header", "zadaci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 48
+                },
+                "name" : "above error",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "error",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "623px"
+                } ],
+                "highlight" : [ "header", "error" ]
+              } ]
+            }, {
+              "name" : "zadaci",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "above error",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "zadaci",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "error",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "zadaci", "error" ]
+              } ]
+            }, {
+              "name" : "labelerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 52
+                },
+                "name" : "above inputerr",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "labelerr",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "inputerr",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "119px"
+                } ],
+                "highlight" : [ "labelerr", "inputerr" ]
+              } ]
+            }, {
+              "name" : "labelzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "above inputzad",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "labelzad",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "inputzad",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "33px"
+                } ],
+                "highlight" : [ "labelzad", "inputzad" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Below section",
+            "place" : {
+              "filePath" : "z32Mobile.gspec",
+              "lineNumber" : 56
+            },
+            "objects" : [ {
+              "name" : "buttonzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "below textkom",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "buttonzad",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "textkom",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "32px"
+                } ],
+                "highlight" : [ "buttonzad", "textkom" ]
+              } ]
+            }, {
+              "name" : "buttonerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "below inputerr",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "buttonerr",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "inputerr",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "34px"
+                } ],
+                "highlight" : [ "buttonerr", "inputerr" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Visible section",
+            "place" : {
+              "filePath" : "z32Mobile.gspec",
+              "lineNumber" : 62
+            },
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "visible",
+                "highlight" : [ "header" ]
+              } ]
+            }, {
+              "name" : "zadaci",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "visible",
+                "highlight" : [ "zadaci" ]
+              } ]
+            }, {
+              "name" : "labelzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 68
+                },
+                "name" : "visible",
+                "highlight" : [ "labelzad" ]
+              } ]
+            }, {
+              "name" : "inputzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 70
+                },
+                "name" : "visible",
+                "highlight" : [ "inputzad" ]
+              } ]
+            }, {
+              "name" : "buttonzad",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 72
+                },
+                "name" : "visible",
+                "highlight" : [ "buttonzad" ]
+              } ]
+            }, {
+              "name" : "textkom",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 74
+                },
+                "name" : "visible",
+                "highlight" : [ "textkom" ]
+              } ]
+            }, {
+              "name" : "error",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 76
+                },
+                "name" : "visible",
+                "highlight" : [ "error" ]
+              } ]
+            }, {
+              "name" : "labelerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 78
+                },
+                "name" : "visible",
+                "highlight" : [ "labelerr" ]
+              } ]
+            }, {
+              "name" : "inputerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 80
+                },
+                "name" : "visible",
+                "highlight" : [ "inputerr" ]
+              } ]
+            }, {
+              "name" : "buttonerr",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 82
+                },
+                "name" : "visible",
+                "highlight" : [ "buttonerr" ]
+              } ]
+            }, {
+              "name" : "textlog",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z32Mobile.gspec",
+                  "lineNumber" : 84
+                },
+                "name" : "visible",
+                "highlight" : [ "textlog" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "labelzad" : {
+              "area" : [ 40, 141, 382, 18 ]
+            },
+            "textkom" : {
+              "area" : [ 40, 564, 382, 50 ]
+            },
+            "buttonerr" : {
+              "area" : [ 116, 940, 229, 50 ]
+            },
+            "inputerr" : {
+              "area" : [ 40, 893, 13, 13 ]
+            },
+            "labelerr" : {
+              "area" : [ 40, 756, 382, 18 ]
+            },
+            "header" : {
+              "area" : [ 8, 0, 454, 101 ]
+            },
+            "buttonzad" : {
+              "area" : [ 116, 646, 229, 38 ]
+            },
+            "textlog" : {
+              "area" : [ 40, 807, 382, 50 ]
+            },
+            "error" : {
+              "area" : [ 8, 724, 446, 417 ]
+            },
+            "inputzad" : {
+              "area" : [ 40, 192, 382, 41 ]
+            },
+            "zadaci" : {
+              "area" : [ 8, 109, 446, 607 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1636492520062,
+        "type" : "node"
+      } ],
+      "time" : 1636492514944,
+      "type" : "node"
+    } ]
+  }
+}

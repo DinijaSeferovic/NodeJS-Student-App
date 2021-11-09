@@ -22,7 +22,6 @@ li {
   );
   box-shadow: 3px 3px 4px rgba(110, 99, 99, 0.212);
   border-radius: 2rem;
-  backdrop-filter: blur(2rem);
   margin: 0.2rem;
   padding: 1.5rem;
   overflow: hidden;
@@ -54,7 +53,6 @@ li a {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 2rem;
-  backdrop-filter: blur(2rem);
   margin: 0.2rem;
   padding: 0.6rem;
 }
@@ -92,7 +90,6 @@ li a {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 2rem;
-  backdrop-filter: blur(2rem);
   margin: 0.1rem;
   padding: 0.6rem;
 }

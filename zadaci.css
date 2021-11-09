@@ -95,7 +95,7 @@ button {
   
     .container-zadaci { 
       width: 85%;
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
       grid-template-columns: 10rem 2fr; 
     }
 
@@ -117,12 +117,12 @@ button {
     
   
     .container-zadaci { 
-      grid-template-rows: 0.1fr 1fr 0.1fr 1fr ;
+      grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 1fr;
       grid-template-columns: repeat(1, 1fr); 
     }
 
     .container-error { 
-      grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+      grid-template-rows: 0.1fr 1fr 0.1fr 1fr;
       grid-template-columns: repeat(1, 1fr); 
     }
 

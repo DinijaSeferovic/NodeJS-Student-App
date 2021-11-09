@@ -1,0 +1,99 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+
+body {
+    background: linear-gradient(to left, #65dfc9, #64c6ff, #ab98ff);
+}
+
+h1 {
+  padding: 2rem 2rem 2rem 2.5rem;
+  color: #8b33ff;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  margin-left: 0.5rem;
+}
+
+.container {
+  display: grid;
+  padding: 2rem;
+  grid-gap: 2rem;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+  margin: 0.5rem;
+}
+
+.container input {
+  padding: 0.7rem;
+  border-radius: 1rem;
+}
+
+.container label {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #451f77;
+  align-self: center;
+  padding-left: 0.5rem;
+}
+
+.container button {
+  background: linear-gradient(
+    to right bottom,
+    rgba(139, 51, 255, 0.8),
+    rgba(255, 255, 255, 0.2)
+  );
+  border-radius: 2rem;
+  padding: 0.6rem;
+  color: #451f77;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+
+@media screen and (min-width: 800px) { /*Širina >= 800px*/
+  
+    .container { 
+      width: 60%;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: 10rem 2fr ;
+    }
+  
+  }
+  
+  
+    
+  @media screen and (min-width: 500px) and (max-width: 799.5px){ /*Širina >= 500px*/
+  
+    .container { 
+      width: 80%;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: 10rem 2fr; 
+    }
+ 
+  }
+  
+  
+  @media screen and (max-width: 499.5px) { /*Širina < 500px*/
+    
+  
+    .container { 
+      grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+      grid-template-columns: repeat(1, 1fr); 
+    }
+
+    .container button {
+      width: 60%;
+      justify-self: center;
+    }
+  
+  
+  }
+  
+  
+  
+  

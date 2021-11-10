@@ -10,7 +10,6 @@
   background: linear-gradient(to right top, #65dfc9, #64c6ff, #ab98ff);
 }
 
-
 li {
   display: inline;
   list-style-type: none;
@@ -22,9 +21,8 @@ li {
   );
   box-shadow: 3px 3px 4px rgba(110, 99, 99, 0.212);
   border-radius: 2rem;
-  margin: 0.2rem;
-  padding: 1.5rem;
-  overflow: hidden;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 li:hover{
@@ -159,6 +157,11 @@ li a {
     grid-template-columns: 1fr 1fr 1fr 2fr;
   }
 
+  ul {
+    margin-top: 1.5rem;
+  }
+  
+
 }
 
 
@@ -174,6 +177,11 @@ li a {
     display: inline;
     list-style-type: none;
   }
+
+  ul {
+    margin-top: 1.5rem;
+  }
+  
 }
 
 
@@ -198,7 +206,7 @@ li a {
   }
 
   .container { 
-    grid-template-rows: 0.3fr 0.7fr 1.5fr;
+    grid-template-rows: 0.2fr 0.5fr 1.5fr;
     grid-template-columns: repeat(1, 1fr); 
   }
 
@@ -207,7 +215,14 @@ li a {
     list-style-type: none;
     padding-bottom: 0.6em;
     padding-top: 0.2em;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
   }
+
+  ul {
+    margin-top: 0.5rem;
+  }
+  
 
 }
 

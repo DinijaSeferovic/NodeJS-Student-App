@@ -15,12 +15,12 @@ var REPORT_DATA = {
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  z31Tablet.gspec --url http://localhost/mojRepozitorij.html --size 600x768 --htmlreport izvjestaji",
+        "name" : "check  z31Tablet.gspec --url http://localhost/pocetna.html --size 600x768 --htmlreport izvjestaji",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: z31Tablet.gspec included tags: ",
-          "status" : "info",
-          "time" : 1636488598025,
+          "status" : "error",
+          "time" : 1636547083640,
           "sections" : [ {
             "name" : "Width section",
             "place" : {
@@ -30,12 +30,13 @@ var REPORT_DATA = {
             "objects" : [ {
               "name" : "container",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 12
                 },
                 "name" : "width 78 to 80 % of body/width",
+                "errors" : [ "\"container\" width is 100% [572px] which is not in range of 78 to 80% [446 to 457px]" ],
                 "meta" : [ {
                   "from" : {
                     "object" : "container",
@@ -45,8 +46,8 @@ var REPORT_DATA = {
                     "object" : "container",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "78 to 80% [458 to 470px]",
-                  "realDistance" : "80% [471px]"
+                  "expectedDistance" : "78 to 80% [446 to 457px]",
+                  "realDistance" : "100% [572px]"
                 } ],
                 "highlight" : [ "container" ]
               } ]
@@ -60,38 +61,38 @@ var REPORT_DATA = {
             "objects" : [ {
               "name" : "input",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 16
                 },
                 "name" : "inside container",
-                "meta" : [ ],
-                "highlight" : [ "input", "container" ]
+                "errors" : [ "\"input\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             }, {
               "name" : "label",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 18
                 },
                 "name" : "inside container",
-                "meta" : [ ],
-                "highlight" : [ "label", "container" ]
+                "errors" : [ "\"label\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             }, {
               "name" : "button",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 20
                 },
                 "name" : "inside container",
-                "meta" : [ ],
-                "highlight" : [ "button", "container" ]
+                "errors" : [ "\"button\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             } ]
           }, {
@@ -103,25 +104,14 @@ var REPORT_DATA = {
             "objects" : [ {
               "name" : "label",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 24
                 },
                 "name" : "left-of input",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "input",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : ">= 0px",
-                  "realDistance" : "32px"
-                } ],
-                "highlight" : [ "label", "input" ]
+                "errors" : [ "\"label\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             } ]
           }, {
@@ -133,25 +123,14 @@ var REPORT_DATA = {
             "objects" : [ {
               "name" : "header",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 28
                 },
                 "name" : "above container",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "header",
-                    "edge" : "bottom"
-                  },
-                  "to" : {
-                    "object" : "container",
-                    "edge" : "top"
-                  },
-                  "expectedDistance" : ">= 0px",
-                  "realDistance" : "8px"
-                } ],
-                "highlight" : [ "header", "container" ]
+                "errors" : [ "\"header\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             } ]
           }, {
@@ -163,25 +142,14 @@ var REPORT_DATA = {
             "objects" : [ {
               "name" : "button",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 32
                 },
                 "name" : "below label",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "button",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "label",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : ">= 0px",
-                  "realDistance" : "191px"
-                } ],
-                "highlight" : [ "button", "label" ]
+                "errors" : [ "\"button\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             } ]
           }, {
@@ -193,13 +161,14 @@ var REPORT_DATA = {
             "objects" : [ {
               "name" : "header",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 36
                 },
                 "name" : "visible",
-                "highlight" : [ "header" ]
+                "errors" : [ "\"header\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             }, {
               "name" : "container",
@@ -215,62 +184,53 @@ var REPORT_DATA = {
             }, {
               "name" : "label",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 40
                 },
                 "name" : "visible",
-                "highlight" : [ "label" ]
+                "errors" : [ "\"label\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             }, {
               "name" : "input",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 42
                 },
                 "name" : "visible",
-                "highlight" : [ "input" ]
+                "errors" : [ "\"input\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             }, {
               "name" : "button",
               "specs" : [ {
-                "status" : "info",
+                "status" : "error",
                 "place" : {
                   "filePath" : "z31Tablet.gspec",
                   "lineNumber" : 44
                 },
                 "name" : "visible",
-                "highlight" : [ "button" ]
+                "errors" : [ "\"button\" is absent on page" ],
+                "highlight" : [ ]
               } ]
             } ]
           } ],
           "objects" : {
             "container" : {
-              "area" : [ 8, 109, 471, 323 ]
-            },
-            "button" : {
-              "area" : [ 40, 362, 160, 38 ]
-            },
-            "input" : {
-              "area" : [ 232, 141, 215, 41 ]
-            },
-            "header" : {
-              "area" : [ 8, 0, 580, 101 ]
-            },
-            "label" : {
-              "area" : [ 40, 153, 160, 18 ]
+              "area" : [ 0, 0, 572, 1081 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1636488596340,
+        "time" : 1636547081374,
         "type" : "node"
       } ],
-      "time" : 1636488589492,
+      "time" : 1636547077069,
       "type" : "node"
     } ]
   }

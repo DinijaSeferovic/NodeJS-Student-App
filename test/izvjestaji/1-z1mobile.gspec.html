@@ -15,12 +15,12 @@ var REPORT_DATA = {
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  z1Mobile.gspec --url http://localhost/pocetna.html --size 499x768 --htmlreport izvjestaji",
+        "name" : "check  z1Mobile.gspec --url http://localhost/pocetna.html --size 400x768 --htmlreport izvjestaji",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: z1Mobile.gspec included tags: ",
-          "status" : "error",
-          "time" : 1636410914467,
+          "status" : "info",
+          "time" : 1636546948155,
           "sections" : [ {
             "name" : "Width section",
             "place" : {
@@ -45,8 +45,8 @@ var REPORT_DATA = {
                     "object" : "meni",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "98 to 100% [461 to 471px]",
-                  "realDistance" : "100% [471px]"
+                  "expectedDistance" : "98 to 100% [427 to 436px]",
+                  "realDistance" : "100% [436px]"
                 } ],
                 "highlight" : [ "meni" ]
               } ]
@@ -68,8 +68,8 @@ var REPORT_DATA = {
                     "object" : "grupelnk",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "98 to 100% [461 to 471px]",
-                  "realDistance" : "98% [464px]"
+                  "expectedDistance" : "98 to 100% [427 to 436px]",
+                  "realDistance" : "98% [430px]"
                 } ],
                 "highlight" : [ "grupelnk" ]
               } ]
@@ -91,8 +91,8 @@ var REPORT_DATA = {
                     "object" : "vjezbelnk",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "98 to 100% [461 to 471px]",
-                  "realDistance" : "98% [464px]"
+                  "expectedDistance" : "98 to 100% [427 to 436px]",
+                  "realDistance" : "98% [430px]"
                 } ],
                 "highlight" : [ "vjezbelnk" ]
               } ]
@@ -114,8 +114,8 @@ var REPORT_DATA = {
                     "object" : "studenti",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "98 to 100% [461 to 471px]",
-                  "realDistance" : "99% [468px]"
+                  "expectedDistance" : "98 to 100% [427 to 436px]",
+                  "realDistance" : "99% [433px]"
                 } ],
                 "highlight" : [ "studenti" ]
               } ]
@@ -137,8 +137,8 @@ var REPORT_DATA = {
                     "object" : "grupe",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "98 to 100% [461 to 471px]",
-                  "realDistance" : "98% [464px]"
+                  "expectedDistance" : "98 to 100% [427 to 436px]",
+                  "realDistance" : "98% [430px]"
                 } ],
                 "highlight" : [ "grupe" ]
               } ]
@@ -199,7 +199,7 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "251px"
+                  "realDistance" : "239px"
                 } ],
                 "highlight" : [ "meni", "studenti" ]
               }, {
@@ -219,7 +219,7 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "3px"
+                  "realDistance" : "4px"
                 } ],
                 "highlight" : [ "meni", "grupe" ]
               } ]
@@ -242,7 +242,7 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "313px"
+                  "realDistance" : "297px"
                 } ],
                 "highlight" : [ "grupelnk", "studenti" ]
               }, {
@@ -262,7 +262,7 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "65px"
+                  "realDistance" : "62px"
                 } ],
                 "highlight" : [ "grupelnk", "grupe" ]
               } ]
@@ -285,7 +285,7 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "268px"
+                  "realDistance" : "247px"
                 } ],
                 "highlight" : [ "vjezbelnk", "studenti" ]
               }, {
@@ -305,33 +305,32 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "20px"
+                  "realDistance" : "12px"
                 } ],
                 "highlight" : [ "vjezbelnk", "grupe" ]
               } ]
             }, {
-              "name" : "studenti",
+              "name" : "grupe",
               "specs" : [ {
-                "status" : "error",
+                "status" : "info",
                 "place" : {
                   "filePath" : "z1Mobile.gspec",
                   "lineNumber" : 47
                 },
-                "name" : "above grupe",
-                "errors" : [ "\"studenti\" is -780px above \"grupe\" but it should be greater than or equal to 0px" ],
+                "name" : "above studenti",
                 "meta" : [ {
                   "from" : {
-                    "object" : "studenti",
+                    "object" : "grupe",
                     "edge" : "bottom"
                   },
                   "to" : {
-                    "object" : "grupe",
+                    "object" : "studenti",
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "-780px"
+                  "realDistance" : "5px"
                 } ],
-                "highlight" : [ "studenti", "grupe" ]
+                "highlight" : [ "grupe", "studenti" ]
               } ]
             } ]
           }, {
@@ -359,7 +358,7 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "251px"
+                  "realDistance" : "239px"
                 } ],
                 "highlight" : [ "studenti", "meni" ]
               }, {
@@ -379,7 +378,7 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "313px"
+                  "realDistance" : "297px"
                 } ],
                 "highlight" : [ "studenti", "grupelnk" ]
               }, {
@@ -399,9 +398,29 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "268px"
+                  "realDistance" : "247px"
                 } ],
                 "highlight" : [ "studenti", "vjezbelnk" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "z1Mobile.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "below grupe",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "studenti",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "grupe",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "studenti", "grupe" ]
               } ]
             }, {
               "name" : "grupe",
@@ -422,7 +441,7 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "3px"
+                  "realDistance" : "4px"
                 } ],
                 "highlight" : [ "grupe", "meni" ]
               }, {
@@ -442,7 +461,7 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "65px"
+                  "realDistance" : "62px"
                 } ],
                 "highlight" : [ "grupe", "grupelnk" ]
               }, {
@@ -462,30 +481,9 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "20px"
+                  "realDistance" : "12px"
                 } ],
                 "highlight" : [ "grupe", "vjezbelnk" ]
-              }, {
-                "status" : "error",
-                "place" : {
-                  "filePath" : "z1Mobile.gspec",
-                  "lineNumber" : 63
-                },
-                "name" : "below studenti",
-                "errors" : [ "\"grupe\" is -780px below \"studenti\" but it should be greater than or equal to 0px" ],
-                "meta" : [ {
-                  "from" : {
-                    "object" : "grupe",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "studenti",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : ">= 0px",
-                  "realDistance" : "-780px"
-                } ],
-                "highlight" : [ "grupe", "studenti" ]
               } ]
             } ]
           }, {
@@ -594,31 +592,31 @@ var REPORT_DATA = {
           } ],
           "objects" : {
             "meni" : {
-              "area" : [ 0, 0, 471, 107 ]
+              "area" : [ 0, 0, 436, 116 ]
             },
             "grupelnk" : {
-              "area" : [ 3, 3, 464, 42 ]
+              "area" : [ 3, 16, 430, 42 ]
             },
             "body" : {
-              "area" : [ 0, 0, 471, 892 ]
+              "area" : [ 0, 0, 436, 850 ]
             },
             "vjezbelnk" : {
-              "area" : [ 3, 48, 464, 42 ]
+              "area" : [ 3, 66, 430, 42 ]
             },
             "grupe" : {
-              "area" : [ 3, 110, 464, 243 ]
+              "area" : [ 3, 120, 430, 230 ]
             },
             "studenti" : {
-              "area" : [ 1, 358, 468, 532 ]
+              "area" : [ 1, 355, 433, 493 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1636410911857,
+        "time" : 1636546944142,
         "type" : "node"
       } ],
-      "time" : 1636410906117,
+      "time" : 1636546939566,
       "type" : "node"
     } ]
   }

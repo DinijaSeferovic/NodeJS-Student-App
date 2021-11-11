@@ -6,12 +6,12 @@
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  z1Mobile.gspec --url http://localhost/pocetna.html --size 400x768 --htmlreport izvjestaji",
+        "name" : "check  z1Mobile.gspec --url http://localhost/pocetna.html --size 300x780 --htmlreport izvjestaji",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: z1Mobile.gspec included tags: ",
           "status" : "info",
-          "time" : 1636546948155,
+          "time" : 1636650712282,
           "sections" : [ {
             "name" : "Width section",
             "place" : {
@@ -604,10 +604,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1636546944142,
+        "time" : 1636650708145,
         "type" : "node"
       } ],
-      "time" : 1636546939566,
+      "time" : 1636650703396,
       "type" : "node"
     } ]
   }

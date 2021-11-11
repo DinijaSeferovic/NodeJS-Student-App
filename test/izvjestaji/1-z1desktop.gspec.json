@@ -6,12 +6,12 @@
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  z1Desktop.gspec --url http://localhost/pocetna.html --size 1000x768 --htmlreport izvjestaji",
+        "name" : "check  z1Desktop.gspec --url http://localhost/pocetna.html --size 850x768 --htmlreport izvjestaji",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: z1Desktop.gspec included tags: ",
           "status" : "info",
-          "time" : 1636546984176,
+          "time" : 1636650517921,
           "sections" : [ {
             "name" : "Width section",
             "place" : {
@@ -36,8 +36,8 @@
                     "object" : "meni",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "98 to 100% [952 to 972px]",
-                  "realDistance" : "100% [972px]"
+                  "expectedDistance" : "98 to 100% [822 to 839px]",
+                  "realDistance" : "100% [839px]"
                 } ],
                 "highlight" : [ "meni" ]
               } ]
@@ -59,8 +59,8 @@
                     "object" : "studenti",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "58 to 60% [563 to 583px]",
-                  "realDistance" : "59% [580px]"
+                  "expectedDistance" : "58 to 60% [486 to 503px]",
+                  "realDistance" : "59% [500px]"
                 } ],
                 "highlight" : [ "studenti" ]
               } ]
@@ -82,8 +82,8 @@
                     "object" : "grupe",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "39 to 41% [379 to 398px]",
-                  "realDistance" : "39% [382px]"
+                  "expectedDistance" : "39 to 41% [327 to 343px]",
+                  "realDistance" : "39% [329px]"
                 } ],
                 "highlight" : [ "grupe" ]
               } ]
@@ -204,7 +204,7 @@
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "3px"
+                  "realDistance" : "4px"
                 } ],
                 "highlight" : [ "meni", "grupe" ]
               } ]
@@ -280,7 +280,7 @@
                     "edge" : "bottom"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "3px"
+                  "realDistance" : "4px"
                 } ],
                 "highlight" : [ "grupe", "meni" ]
               } ]
@@ -468,31 +468,31 @@
           } ],
           "objects" : {
             "meni" : {
-              "area" : [ 0, 0, 972, 97 ]
+              "area" : [ 0, 0, 839, 96 ]
             },
             "grupelnk" : {
               "area" : [ 8, 25, 88, 33 ]
             },
             "body" : {
-              "area" : [ 0, 0, 972, 758 ]
+              "area" : [ 0, 0, 839, 677 ]
             },
             "vjezbelnk" : {
               "area" : [ 116, 25, 99, 33 ]
             },
             "grupe" : {
-              "area" : [ 586, 100, 382, 655 ]
+              "area" : [ 506, 100, 329, 574 ]
             },
             "studenti" : {
-              "area" : [ 1, 98, 580, 658 ]
+              "area" : [ 1, 98, 500, 577 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1636546980070,
+        "time" : 1636650514176,
         "type" : "node"
       } ],
-      "time" : 1636546975851,
+      "time" : 1636650509384,
       "type" : "node"
     } ]
   }

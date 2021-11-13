@@ -23,9 +23,8 @@
     box-shadow: 3px 3px 4px rgba(110, 99, 99, 0.212);
     border-radius: 2rem;
     backdrop-filter: blur(2rem);
-    margin: 0.2rem;
-    padding: 1.5rem;
-    overflow: hidden;
+    margin: 0.5rem;
+    padding: 0.5rem;
   }
   
   li:hover{
@@ -141,8 +140,12 @@
     }
 
     .container { 
-      grid-template-rows: 0.22fr 1.5fr;
+      grid-template-rows: 0.25fr 1.5fr;
       grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    ul {
+      margin-top: 1.5rem;
     }
   
   }

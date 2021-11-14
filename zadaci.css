@@ -43,9 +43,12 @@ h1 {
   margin: 0.5rem;
 }
 
-input {
+select {
   padding: 0.7rem;
   border-radius: 1rem;
+  background-color: white;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #451f77;
 }
 
 label {

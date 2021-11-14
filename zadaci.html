@@ -8,38 +8,35 @@
 </head>
 <body>
     <h1>Komentari</h1>
-    <form>
+    <form id="vjezbe">
         <div class="container-zadaci">
             <label for="odabirvj">Odabir vježbe</label>
-            <input list="odabirvj" name="odabirvj">
-            <datalist id="odabirvj">
-                <option value="Vjezba 1">
-                <option value="Vjezba 2">
-                <option value="Vjezba 3">
-                <option value="Vjezba 4">
-                <option value="Vjezba 5">
-                <option value="Vjezba 6">
-            </datalist>
-            <label for="odabirzad">Odabir vježbe</label>
-            <input list="odabirzad" name="odabirzad">
-            <datalist id="odabirzad">
-                <option value="Zadatak 1">
-                <option value="Zadatak 2">
-                <option value="Zadatak 3">
-                <option value="Zadatak 4">
-            </datalist>
-            <label for="odabirver">Odabir vježbe</label>
-            <input list="odabirver" name="odabirver">
-            <datalist id="odabirver">
-                <option value="Verzija 1">
-                <option value="Verzija 2">
-            </datalist>
+            <select id="odabirvj" form="vjezbe">
+                <option value="Vjezba 1">Vjezba 1</option>
+                <option value="Vjezba 2">Vjezba 2</option>
+                <option value="Vjezba 3">Vjezba 3</option>
+                <option value="Vjezba 4">Vjezba 4</option>
+                <option value="Vjezba 5">Vjezba 5</option>
+                <option value="Vjezba 6">Vjezba 6</option>
+            </select>
+            <label for="odabirzad">Odabir zadatka</label>
+            <select id="odabirzad" form="vjezbe">
+                <option value="Zadatak 1">Zadatak 1</option>
+                <option value="Zadatak 2">Zadatak 2</option>
+                <option value="Zadatak 3">Zadatak 3</option>
+                <option value="Zadatak 4">Zadatak 4</option>
+            </select>
+            <label for="odabirver">Odabir verzije</label>
+            <select id="odabirver" form="vjezbe">
+                <option value="Verzija 1">Verzija 1</option>
+                <option value="Verzija 2">Verzija 2</option>
+            </select>
             <label for="kom">Komentar</label>
             <textarea name="message"></textarea>
             <button type="submit" value="Submit">Pošalji</button>
         </div>         
     </form>
-    <form>
+    <form id="greske">
         <div class="container-error">
             <label for="kom">Errors log</label>
             <textarea name="message"></textarea>

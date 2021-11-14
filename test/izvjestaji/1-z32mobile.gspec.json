@@ -6,12 +6,12 @@
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  z32Mobile.gspec --url http://localhost/zadaci.html --size 490x768 --htmlreport izvjestaji",
+        "name" : "check  z32Mobile.gspec --url http://localhost/zadaci.html --size 499x768 --htmlreport izvjestaji",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: z32Mobile.gspec included tags: ",
           "status" : "info",
-          "time" : 1636492522905,
+          "time" : 1636904230558,
           "sections" : [ {
             "name" : "Width section",
             "place" : {
@@ -36,8 +36,8 @@
                     "object" : "zadaci",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "95 to 97% [438 to 448px]",
-                  "realDistance" : "96% [446px]"
+                  "expectedDistance" : "95 to 97% [447 to 456px]",
+                  "realDistance" : "96% [455px]"
                 } ],
                 "highlight" : [ "zadaci" ]
               } ]
@@ -59,8 +59,8 @@
                     "object" : "error",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "95 to 97% [438 to 448px]",
-                  "realDistance" : "96% [446px]"
+                  "expectedDistance" : "95 to 97% [447 to 456px]",
+                  "realDistance" : "96% [455px]"
                 } ],
                 "highlight" : [ "error" ]
               } ]
@@ -82,8 +82,8 @@
                     "object" : "buttonzad",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "50 to 52% [223 to 231px]",
-                  "realDistance" : "51% [229px]"
+                  "expectedDistance" : "50 to 52% [227 to 236px]",
+                  "realDistance" : "51% [234px]"
                 } ],
                 "highlight" : [ "buttonzad" ]
               } ]
@@ -105,8 +105,8 @@
                     "object" : "buttonerr",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "50 to 52% [223 to 231px]",
-                  "realDistance" : "51% [229px]"
+                  "expectedDistance" : "50 to 52% [227 to 236px]",
+                  "realDistance" : "51% [234px]"
                 } ],
                 "highlight" : [ "buttonerr" ]
               } ]
@@ -259,7 +259,7 @@
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "623px"
+                  "realDistance" : "662px"
                 } ],
                 "highlight" : [ "header", "error" ]
               } ]
@@ -282,7 +282,7 @@
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "8px"
+                  "realDistance" : "9px"
                 } ],
                 "highlight" : [ "zadaci", "error" ]
               } ]
@@ -305,7 +305,7 @@
                     "edge" : "top"
                   },
                   "expectedDistance" : ">= 0px",
-                  "realDistance" : "119px"
+                  "realDistance" : "118px"
                 } ],
                 "highlight" : [ "labelerr", "inputerr" ]
               } ]
@@ -517,46 +517,46 @@
           } ],
           "objects" : {
             "labelzad" : {
-              "area" : [ 40, 141, 382, 18 ]
+              "area" : [ 40, 141, 391, 18 ]
             },
             "textkom" : {
-              "area" : [ 40, 564, 382, 50 ]
+              "area" : [ 40, 590, 391, 50 ]
             },
             "buttonerr" : {
-              "area" : [ 116, 940, 229, 50 ]
+              "area" : [ 118, 978, 234, 50 ]
             },
             "inputerr" : {
-              "area" : [ 40, 893, 13, 13 ]
+              "area" : [ 40, 931, 13, 13 ]
             },
             "labelerr" : {
-              "area" : [ 40, 756, 382, 18 ]
+              "area" : [ 40, 795, 391, 18 ]
             },
             "header" : {
-              "area" : [ 8, 0, 454, 101 ]
+              "area" : [ 8, 0, 463, 101 ]
             },
             "buttonzad" : {
-              "area" : [ 116, 646, 229, 38 ]
+              "area" : [ 118, 672, 234, 50 ]
             },
             "textlog" : {
-              "area" : [ 40, 807, 382, 50 ]
+              "area" : [ 40, 845, 391, 50 ]
             },
             "error" : {
-              "area" : [ 8, 724, 446, 417 ]
+              "area" : [ 8, 763, 455, 298 ]
             },
             "inputzad" : {
-              "area" : [ 40, 192, 382, 41 ]
+              "area" : [ 40, 192, 391, 50 ]
             },
             "zadaci" : {
-              "area" : [ 8, 109, 446, 607 ]
+              "area" : [ 8, 109, 455, 645 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1636492520062,
+        "time" : 1636904226821,
         "type" : "node"
       } ],
-      "time" : 1636492514944,
+      "time" : 1636904222092,
       "type" : "node"
     } ]
   }

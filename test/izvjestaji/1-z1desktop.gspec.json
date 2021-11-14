@@ -6,12 +6,12 @@
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  z1Desktop.gspec --url http://localhost/pocetna.html --size 850x768 --htmlreport izvjestaji",
+        "name" : "check  z1Desktop.gspec --url http://localhost/z1.html --size 850x768 --htmlreport izvjestaji",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: z1Desktop.gspec included tags: ",
           "status" : "info",
-          "time" : 1636650517921,
+          "time" : 1636816107330,
           "sections" : [ {
             "name" : "Width section",
             "place" : {
@@ -489,10 +489,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1636650514176,
+        "time" : 1636816104693,
         "type" : "node"
       } ],
-      "time" : 1636650509384,
+      "time" : 1636816096057,
       "type" : "node"
     } ]
   }

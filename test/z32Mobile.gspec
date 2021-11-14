@@ -1,7 +1,7 @@
 @objects
   zadaci css .container-zadaci
   error css .container-error
-  inputzad css .container-zadaci input
+  inputzad css .container-zadaci select
   inputerr css .container-error input
   labelzad css .container-zadaci label
   labelerr css .container-error label

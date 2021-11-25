@@ -60,11 +60,14 @@ var TestParser =(function(){
         } catch(e) {
             return {"promjena": "0%", "greske": "Testovi se ne mogu izvršiti"};
         }
+        
         var jednaki;
         var tests1 = ulaz1.tests.sort(compare);
         var tests2 = ulaz2.tests.sort(compare);
+
+        if (ulaz2.tests.length==0 && ulaz1.failures.length==0 || ulaz2.tests.length==0 && ulaz1.tests.length==0) return {"promjena": "0%", "greske": []};
         for (let i=0; i<tests1.length; i++) {
-            if (tests1[i].fullTitle==tests2[i].fullTitle && tests1.length==tests2.length) jednaki=true;
+            if (tests1.length!=0 && tests2.length!=0 && tests1[i].fullTitle==tests2[i].fullTitle && tests1.length==tests2.length) jednaki=true;
             else {
                 jednaki=false;
                 break;
@@ -78,8 +81,16 @@ var TestParser =(function(){
         }
         else {
             x = (greskeUPrvom(ulaz1, ulaz2).brojac + ulaz2.failures.length) / (greskeUPrvom(ulaz1, ulaz2).brojac + ulaz2.tests.length) * 100;
-            nizGresaka = greskeUPrvom(ulaz1, ulaz2).razlika;
-            nizGresaka = nizGresaka.concat(sortiraniNizGresakaDrugog);
+            x = (Math.round( x * 10 ) / 10);
+            let nizGresakaUPrvom = greskeUPrvom(ulaz1, ulaz2).razlika;
+            if (nizGresakaUPrvom == []) {
+                nizGresaka = sortiraniNizGresakaDrugog;
+            }
+            else {
+                nizGresaka = nizGresakaUPrvom;
+                nizGresaka = nizGresaka.concat(sortiraniNizGresakaDrugog);
+            }
+            
         }
         postotak = x.toString();
         if (!jednaki) postotak += "%"; 

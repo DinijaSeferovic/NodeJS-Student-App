@@ -10,7 +10,8 @@ body {
 
 h1 {
   padding: 2rem 2rem 2rem 2.5rem;
-  color: #8b33ff;
+  color: white;
+  text-shadow: 1px 3px 4px #7d7c80;
   font-family: "Trebuchet MS", Verdana, sans-serif;
   margin-left: 0.5rem;
 }
@@ -18,7 +19,7 @@ h1 {
 .container {
   display: grid;
   padding: 2rem;
-  grid-gap: 2rem;
+  grid-gap: 1.2rem;
   background: white;
   background: linear-gradient(
     to right bottom,
@@ -26,7 +27,7 @@ h1 {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 2rem;
-  margin: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .container input {

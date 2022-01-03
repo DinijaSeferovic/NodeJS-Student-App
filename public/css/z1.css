@@ -19,10 +19,9 @@ li {
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.3)
   );
-  box-shadow: 3px 3px 4px rgba(110, 99, 99, 0.212);
   border-radius: 2rem;
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 li:hover{

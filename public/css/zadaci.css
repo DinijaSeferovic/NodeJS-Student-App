@@ -47,6 +47,7 @@ h1 {
 select {
   padding: 0.7rem;
   border-radius: 1rem;
+  border-color: #acabaf;
   background-color: white;
   font-family: "Trebuchet MS", Verdana, sans-serif;
   color: #451f77;
@@ -66,7 +67,9 @@ button {
     rgba(255, 255, 255, 0.2)
   );
   border-radius: 2rem;
+  border-color: #acabaf;
   padding: 0.6rem;
+  height: 2.5rem;
   color: #451f77;
   font-family: "Trebuchet MS", Verdana, sans-serif;
 }
@@ -76,13 +79,13 @@ button {
   
     .container-zadaci { 
       width: 60%;
-      grid-template-rows: repeat(5, 0.8fr);
+      grid-template-rows: repeat(5, 0.85fr);
       grid-template-columns: 10rem 2fr ;
     }
 
     .container-error { 
       width: 60%;
-      grid-template-rows: repeat(3, 0.8fr);
+      grid-template-rows: repeat(3, 0.7fr);
       grid-template-columns: 10rem 2fr ;
     }
 
@@ -99,13 +102,13 @@ button {
   
     .container-zadaci { 
       width: 85%;
-      grid-template-rows: repeat(5, 0.8fr);
+      grid-template-rows: repeat(5, 0.85fr);
       grid-template-columns: 10rem 2fr; 
     }
 
     .container-error { 
       width: 85%;
-      grid-template-rows: repeat(3, 0.8fr);
+      grid-template-rows: repeat(3, 0.7fr);
       grid-template-columns: 10rem 2fr; 
     }
 

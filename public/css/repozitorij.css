@@ -33,6 +33,7 @@ h1 {
 .container input {
   padding: 0.7rem;
   border-radius: 1rem;
+  border-color: #acabaf;
 }
 
 .container label {
@@ -50,6 +51,8 @@ h1 {
   );
   border-radius: 2rem;
   padding: 0.6rem;
+  border-color: #acabaf;
+  height: 2.5rem;
   color: #451f77;
   font-family: "Trebuchet MS", Verdana, sans-serif;
 }

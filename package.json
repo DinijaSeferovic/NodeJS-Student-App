@@ -1,6 +1,5 @@
 {
   "_from": "@ungap/promise-all-settled@1.1.2",
-  "_id": "@ungap/promise-all-settled@1.1.2",
   "_inBundle": false,
   "_integrity": "sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==",
   "_location": "/@ungap/promise-all-settled",
@@ -23,13 +22,10 @@
   "_shasum": "aa58042711d6e3275dd37dc597e5d31e8c290a44",
   "_spec": "@ungap/promise-all-settled@1.1.2",
   "_where": "C:\\Users\\dinij\\VSCProjects\\wt21P18359\\node_modules\\mocha",
-  "author": {
-    "name": "Andrea Giammarchi"
-  },
+  "author": "Andrea Giammarchi",
   "bugs": {
     "url": "https://github.com/ungap/promise-all-settled/issues"
   },
-  "bundleDependencies": false,
   "deprecated": false,
   "description": "A cross platform Promise.allSettled polyfill",
   "devDependencies": {
@@ -63,5 +59,8 @@
     "test": "mocha"
   },
   "unpkg": "min.js",
-  "version": "1.1.2"
+  "version": "1.1.2",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }

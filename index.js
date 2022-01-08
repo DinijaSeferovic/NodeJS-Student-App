@@ -1,18 +1,24 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+
+///app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/',express.static(path.join(__dirname, "public/html")));
+app.use('/',express.static(path.join(__dirname, "public/css")));
+app.use('/',express.static(path.join(__dirname, "public/images")));
+app.use('/',express.static(path.join(__dirname, "public/js")));
+
 
 app.get('/vjezbe', function (req, res) {
     fs.readFile("vjezbe.csv", function(err, data) {
         try {
-            var csvString = data.toString('utf-8').replace(/[\n]/g, "");
-    
-            var lines = csvString.split("\r");
+            var csvString = data.toString('utf-8');
+
+            var lines = csvString.split("\n");
             lines.shift();
 
             var zadaci = [];
@@ -41,21 +47,47 @@ app.get('/vjezbe', function (req, res) {
   });
 });
 
-app.get('/z1.html', function (req, res) {
-    res.sendFile( __dirname + "/public/html/" + "z1.html" );
-});
 
-app.get('/vjezbe.html', function (req, res) {
-    res.sendFile( __dirname + "/public/html/" + "vjezbe.html" );
-});
+app.post('/vjezbe',function(req,res){
+    let tijelo = req.body;
+    let novaLinija = "brojVjezbi" + "," + "brojZadataka"+"\n";
 
-app.get('/mojRepozitorij.html', function (req, res) {
-    res.sendFile( __dirname + "/public/html/" + "mojRepozitorij.html" );
-});
+    let brojVjezbi = tijelo['brojVjezbi'];
+    let brojZadataka = [];
 
-app.get('/zadaci.html', function (req, res) {
-    res.sendFile( __dirname + "/public/html/" + "zadaci.html" );
+    for (let i=0; i<brojVjezbi; i++) {
+        brojZadataka[i] = tijelo['brojZadataka'][i];
+        novaLinija += i.toString() + "," + brojZadataka[i] + "\n";
+    }
+
+    pogresno = [];
+
+    if (brojVjezbi<1 || brojVjezbi>15) pogresno.push("brojVjezbi");
+    for (let i=0; i<brojZadataka.length; i++) {
+        if (brojZadataka[i]>10 || brojZadataka[i]<0)
+            pogresno.push("z"+ i.toString());
+    }
+    
+    let errorData = "Pogrešan parametar ";
+
+    for (let i=0 ; i<pogresno.length; i++) {
+        errorData+=pogresno[i];
+        if (i!=pogresno.length-1) errorData+=","
+    }
+
+    if (pogresno.length!=0) {
+        res.json({status:"error",data:errorData});
+    }
+    else {
+        fs.writeFile('vjezbe.csv',novaLinija,function(err){
+            if(err) console.log("Greska");
+            res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka});
+        });
+    }
+
+    
 });
+ 
 
 app.listen(3000);
   

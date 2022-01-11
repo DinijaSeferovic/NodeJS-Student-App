@@ -35,5 +35,14 @@ describe('Tests for VjezbeAjax', function() {
     this.requests[0].respond(200, { 'Content-Type': 'application/json' }, dataJson);
   });
 
+  it('should return an error into the callback ', function(done) {
+    dohvatiPodatke(function(err, result) {
+      err.should.exist;
+      done();
+    });
+   
+    this.requests[0].respond(500);
+  });
+
 
 });

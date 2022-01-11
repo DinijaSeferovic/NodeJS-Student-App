@@ -35,7 +35,7 @@ app.get('/vjezbe', function (req, res) {
                 result = {status:'error', data: 'Pogrešan parametar brojVjezbi'};
                 console.log("Neispravni podaci");
             } 
-            else if (!zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0)) {
+            else if (!zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0) || lines.length!=zadaci.length) {
                 result = {status:'error', data: 'Pogrešan parametar brojZadataka'};
                 console.log("Neispravni podaci");
             }

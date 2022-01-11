@@ -29,14 +29,19 @@ app.get('/vjezbe', function (req, res) {
                 zadaci[i] = parseInt(line[1]);
             }
 
-            var result = {brojVjezbi: lines.length, brojZadataka: zadaci};
+            var result = {};
             res.writeHead(200, {'Content-Type': 'application/json'});
-            if (lines.length>0 && lines.length<=15 && zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0)) {
-                res.write(JSON.stringify(result));
+            if (lines.length<1 ||  lines.length>15) {
+                result = {status:'error', data: 'Pogrešan parametar brojVjezbi'};
+            } 
+            else if (!zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0)) {
+                result = {status:'error', data: 'Pogrešan parametar brojZadataka'};
             }
             else {
+                result = {brojVjezbi: lines.length, brojZadataka: zadaci};
                 console.log("Neispravni podaci");
             }
+            res.write(JSON.stringify(result));
             return res.end(); 
 
         } catch (err) {

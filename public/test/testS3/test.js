@@ -35,8 +35,18 @@ describe('Tests for VjezbeAjax', function() {
     this.requests[0].respond(200, { 'Content-Type': 'application/json' }, dataJson);
   });
 
-  it('should return an error into the callback ', function(done) {
+  it('should return an error into the callback for get ', function(done) {
     dohvatiPodatke(function(err, result) {
+      err.should.exist;
+      done();
+    });
+   
+    this.requests[0].respond(500);
+  });
+
+  it('should return an error into the callback for post ', function(done) {
+    var data = { brojVjezbi: 4, brojZadataka: [1,2,3,4] };
+    posaljiPodatke(data, function(err, result) {
       err.should.exist;
       done();
     });

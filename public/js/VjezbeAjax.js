@@ -56,11 +56,12 @@ function iscrtajVjezbe(divDOMelement,vjezbeObjekat) {
         divDOMelement.innerHTML = izlaz;
 
         for (let i=0; i<vjezbeObjekat['brojVjezbi']; i++) {
+
             document.getElementById('vjezba'+(i + 1).toString()).onclick = function() {
                 
                 otvorene.push(i+1);
+                console.log(otvorene);
                 iscrtajZadatke(document.getElementById('vjezba'+(i + 1).toString()),vjezbeObjekat['brojZadataka'][i]);
-                
                 
             }
         }
@@ -82,18 +83,27 @@ function iscrtajZadatke(vjezbaDOMelement,brojZadataka) {
     izlaz += '</div>';
     if (otvorene.length<2) {
         vjezbaDOMelement.insertAdjacentHTML('afterend', izlaz);
+        console.log(1);
     }
     else if (otvorene.filter(x => x === parseInt(brojVjezbe)).length==1) {
         for (let element of document.getElementsByClassName("zadaci")){
             element.style.display="none";
-         }
+        }
         vjezbaDOMelement.insertAdjacentHTML('afterend', izlaz);
+        console.log(2);
+    }
+    else if (otvorene[otvorene.length - 2] === parseInt(brojVjezbe) && otvorene.filter(x => x === parseInt(brojVjezbe)).length % 2 ==1 ) {
+        for (let element of document.getElementsByClassName("zadaci")){
+            element.style.display="none";
+        }
+        console.log(3);
     }
     else {
         for (let element of document.getElementsByClassName("zadaci")){
             element.style.display="none";
-         }
+        }
         document.getElementById("zadaci"+brojVjezbe).style.display = "block";
+        console.log(4);
     }
     
     

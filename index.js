@@ -33,13 +33,15 @@ app.get('/vjezbe', function (req, res) {
             res.writeHead(200, {'Content-Type': 'application/json'});
             if (lines.length<1 ||  lines.length>15) {
                 result = {status:'error', data: 'Pogrešan parametar brojVjezbi'};
+                console.log("Neispravni podaci");
             } 
             else if (!zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0)) {
                 result = {status:'error', data: 'Pogrešan parametar brojZadataka'};
+                console.log("Neispravni podaci");
             }
             else {
                 result = {brojVjezbi: lines.length, brojZadataka: zadaci};
-                console.log("Neispravni podaci");
+                
             }
             res.write(JSON.stringify(result));
             return res.end(); 

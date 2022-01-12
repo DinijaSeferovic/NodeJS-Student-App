@@ -15,7 +15,7 @@ window.onload=function(){
                     }
                     let obj = {brojVjezbi:broj.value, brojZadataka:brojZadataka};
 
-                    posaljiPodatke(obj, function(){});
+                    posaljiPodatke(obj, function(error, data){ if (error==null && data[Object.keys(data)[0]]!="error") alert("Uspješno poslano")});
                     
                 });
             }

@@ -15,13 +15,18 @@ window.onload=function(){
                     }
                     let obj = {brojVjezbi:broj.value, brojZadataka:brojZadataka};
 
-                    posaljiPodatke(obj, function(error, data){ if (error==null && data[Object.keys(data)[0]]!="error") alert("Uspješno poslano")});
+                    posaljiPodatke(obj, function(error, data){ 
+                        if (error==null && data[Object.keys(data)[0]]!="error") {
+                            alert("Uspješno poslano");
+                        } else {
+                            console.log(data);
+                        }
+                    });
                     
                 });
             }
             else {
-                dodajInputPolja(zadaciField, broj.value);
-                console.log({status: 'error', data: 'Pogrešan parametar brojVjezbi,brojZadataka'});
+                console.log({status: 'error', data: 'Pogrešan parametar brojVjezbi'});
             }
         });
     

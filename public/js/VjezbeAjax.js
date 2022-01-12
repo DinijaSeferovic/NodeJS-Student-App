@@ -49,7 +49,7 @@ function iscrtajVjezbe(divDOMelement,vjezbeObjekat) {
     if (vjezbeObjekat['brojVjezbi']>0 && vjezbeObjekat['brojVjezbi']<16) {
 
         for (let i=0; i<vjezbeObjekat['brojVjezbi']; i++) {
-            izlaz += `<div class="vjezba" id="vjezba${(i + 1).toString()}"><button class="vjezbabtn" >Vježba ${(i + 1).toString()}</button></div>`;
+            izlaz += `<div class="vjezba" id="vjezba${(i + 1).toString()}"><div class="btnfield"><button class="vjezbabtn" >Vježba ${(i + 1).toString()}</button></div></div>`;
             
         }
     
@@ -60,7 +60,6 @@ function iscrtajVjezbe(divDOMelement,vjezbeObjekat) {
             document.getElementById('vjezba'+(i + 1).toString()).onclick = function() {
                 
                 otvorene.push(i+1);
-                console.log(otvorene);
                 iscrtajZadatke(document.getElementById('vjezba'+(i + 1).toString()),vjezbeObjekat['brojZadataka'][i]);
                 
             }
@@ -77,33 +76,29 @@ function iscrtajZadatke(vjezbaDOMelement,brojZadataka) {
     if (brojZadataka>=0 && brojZadataka<11) {
 
         for (let i=0; i<brojZadataka; i++) {
-            izlaz += `<button>Zadatak ${(i + 1).toString()}</button>`;
+            izlaz += `<button class="zadatakbtn">Zadatak ${(i + 1).toString()}</button>`;
         }
     }
     izlaz += '</div>';
     if (otvorene.length<2) {
-        vjezbaDOMelement.insertAdjacentHTML('afterend', izlaz);
-        console.log(1);
+        vjezbaDOMelement.insertAdjacentHTML('beforeend', izlaz);
     }
     else if (otvorene.filter(x => x === parseInt(brojVjezbe)).length==1) {
         for (let element of document.getElementsByClassName("zadaci")){
             element.style.display="none";
         }
-        vjezbaDOMelement.insertAdjacentHTML('afterend', izlaz);
-        console.log(2);
+        vjezbaDOMelement.insertAdjacentHTML('beforeend', izlaz);
     }
     else if (otvorene[otvorene.length - 2] === parseInt(brojVjezbe) && otvorene.filter(x => x === parseInt(brojVjezbe)).length % 2 ==1 ) {
         for (let element of document.getElementsByClassName("zadaci")){
             element.style.display="none";
         }
-        console.log(3);
     }
     else {
         for (let element of document.getElementsByClassName("zadaci")){
             element.style.display="none";
         }
         document.getElementById("zadaci"+brojVjezbe).style.display = "block";
-        console.log(4);
     }
     
     

@@ -60,7 +60,7 @@
   }
 
   
-  #vjezbe-flex .vjezba {
+  #vjezbe-flex .vjezba .btnfield {
     display: flex;
     background: linear-gradient(
       to left top,

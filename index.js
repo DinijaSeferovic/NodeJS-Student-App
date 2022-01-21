@@ -42,6 +42,7 @@ app.get('/vjezbe', function (req, res) {
 
         function postaviZadatke(zadatak, vjezba) {
         
+            zadaci.push(zadatak);
             if (vjezbe[vjezbe.length-1]===vjezba) {
                 var result = {};
                 res.writeHead(200, {'Content-Type': 'application/json'});

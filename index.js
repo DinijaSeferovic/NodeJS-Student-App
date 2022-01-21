@@ -31,45 +31,37 @@ Vjezba.sync();
 Zadatak.sync();
 
 app.get('/vjezbe', function (req, res) {
-    /*fs.readFile("vjezbe.csv", function(err, data) {
-        try {
-            var csvString = data.toString('utf-8');
 
-            var lines = csvString.split("\n");
-            lines.shift();
-            lines.pop();
-
-            var zadaci = [];
-
-            let line = [];
-            for (let i=0; i<lines.length; i++) {
-                line = lines[i].split(',');
-                zadaci[i] = parseInt(line[1]);
-            }
-
-            var result = {};
-            res.writeHead(200, {'Content-Type': 'application/json'});
-            if (lines.length<1 ||  lines.length>15) {
-                result = {status:'error', data: 'Pogrešan parametar brojVjezbi'};
-                console.log("Neispravni podaci");
-            } 
-            else if (!zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0) || lines.length!=zadaci.length) {
-                result = {status:'error', data: 'Pogrešan parametar brojZadataka'};
-                console.log("Neispravni podaci");
-            }
-            else {
-                result = {brojVjezbi: lines.length, brojZadataka: zadaci};
-                
-            }
-            res.write(JSON.stringify(result));
-            return res.end(); 
-
-        } catch (err) {
-            console.log("Neispravna datoteka");
-        }
+    Vjezba.findAll({order: [['naziv','ASC']]}).then(function(vjezbe) {
+    
+        var zadaci = [];
         
-  });*/
+        vjezbe.forEach(vjezba => vjezba.getZadaciVjezbe().then(function(zadaciVjezbe) {
+            postaviZadatke(zadaciVjezbe.length, vjezba);
+        }));
 
+        function postaviZadatke(zadatak, vjezba) {
+        
+            if (vjezbe[vjezbe.length-1]===vjezba) {
+                var result = {};
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                if (vjezbe.length<1 ||  vjezbe.length>15) {
+                result = {status:'error', data: 'Pogrešan parametar brojVjezbi'};
+                    console.log("Neispravni podaci");
+                } 
+                else if (!zadaci.every(num => parseInt(num)<=10 && parseInt(num)>=0)) {
+                    result = {status:'error', data: 'Pogrešan parametar brojZadataka'};
+                    console.log("Neispravni podaci");
+                }
+                else {
+                    result = {brojVjezbi: vjezbe.length, brojZadataka: zadaci};
+                            
+                }
+                res.write(JSON.stringify(result));
+                return res.end(); 
+            }
+        }
+    });
 });
 
 
@@ -121,7 +113,7 @@ app.post('/vjezbe',function(req,res){
             let i,j,v;
             for (i = 0, v = 0, j = zadaciIzBaze.length; i < j, v<brojVjezbi; i += brojZadataka[v], v++) {
                 zadaciPoVjezbama[v] = zadaciIzBaze.slice(i, i + brojZadataka[v]);
-                console.log(zadaciPoVjezbama[v]);
+                //console.log(zadaciPoVjezbama[v]);
             }
                 
             for (let i=0; i<brojVjezbi; i++) {
@@ -135,7 +127,7 @@ app.post('/vjezbe',function(req,res){
             }
             Promise.all(vjezbeListaPromisea).then(function(v){return v;}).catch(function(err){console.log("Vjezbe greska "+err);});
         }).catch(function(err){console.log("Zadaci greska "+err);});
-    res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka});
+    console.log(res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka}));
     }
     
 });

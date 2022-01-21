@@ -1,3 +1,5 @@
+const Sequelize = require('sequelize');
+const sequelize = require('./db.js');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -13,8 +15,23 @@ app.use(express.static('public/css'));
 app.use(express.static('public/images'));
 app.use(express.static('public/test'));
 
+//import modela
+const Student = require('./models/student.js')(sequelize);
+const Grupa = require('./models/grupa.js')(sequelize);
+const Vjezba = require('./models/vjezba.js')(sequelize);
+const Zadatak = require('./models/zadatak.js')(sequelize);
+
+//relacije
+Grupa.hasMany(Student, {foreignKey:'grupaId', as:'studentiGrupe'})
+Vjezba.hasMany(Zadatak, {foreignKey:'vjezbaId', as:'zadaciVjezbe', onDelete: 'cascade', hooks:true})
+
+Student.sync();
+Grupa.sync();
+Vjezba.sync();
+Zadatak.sync();
+
 app.get('/vjezbe', function (req, res) {
-    fs.readFile("vjezbe.csv", function(err, data) {
+    /*fs.readFile("vjezbe.csv", function(err, data) {
         try {
             var csvString = data.toString('utf-8');
 
@@ -51,14 +68,14 @@ app.get('/vjezbe', function (req, res) {
             console.log("Neispravna datoteka");
         }
         
-  });
+  });*/
+
 });
 
 
 app.post('/vjezbe',function(req,res){
     let tijelo = req.body;
-    let novaLinija = "brojVjezbi" + "," + "brojZadataka"+"\n";
-
+    
     let brojVjezbi = tijelo['brojVjezbi'];
     let brojZadataka = tijelo['brojZadataka'];
 
@@ -82,16 +99,44 @@ app.post('/vjezbe',function(req,res){
         res.json({status:"error",data:errorData});
     }
     else {
-        for (let i=0; i<brojVjezbi; i++) {
-            novaLinija += i.toString() + "," + brojZadataka[i] + "\n";
+        
+        Zadatak.destroy({truncate: true, restartIdentity: true});
+        Vjezba.destroy({truncate: { cascade: true }, restartIdentity: true});
+
+        var zadaciListaPromisea=[];
+        var vjezbeListaPromisea=[];
+
+        for (let i=0; i<brojZadataka.length; i++) {
+            for (let j=0; j<brojZadataka[i]; j++) {
+                zadaciListaPromisea.push(
+                    Zadatak.create({naziv:"Zadatak "+(j+1).toString()})
+                );
+            }
         }
+        
+        Promise.all(zadaciListaPromisea).then(function(zadaciIzBaze){
+            var zadaciPoVjezbama = [];
 
-        fs.writeFile('vjezbe.csv',novaLinija,function(err){
-            if(err) console.log("Greska");
-            res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka});
-        });
+            
+            let i,j,v;
+            for (i = 0, v = 0, j = zadaciIzBaze.length; i < j, v<brojVjezbi; i += brojZadataka[v], v++) {
+                zadaciPoVjezbama[v] = zadaciIzBaze.slice(i, i + brojZadataka[v]);
+                console.log(zadaciPoVjezbama[v]);
+            }
+                
+            for (let i=0; i<brojVjezbi; i++) {
+                vjezbeListaPromisea.push(
+                    Vjezba.create({naziv:"Vježba "+(i+1).toString()}).then(function(v){
+                        return v.setZadaciVjezbe(zadaciPoVjezbama[i]).then(function(){
+                        return new Promise(function(resolve,reject){resolve(v);reject("");});
+                        });
+                    })
+                );
+            }
+            Promise.all(vjezbeListaPromisea).then(function(v){return v;}).catch(function(err){console.log("Vjezbe greska "+err);});
+        }).catch(function(err){console.log("Zadaci greska "+err);});
+    res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka});
     }
-
     
 });
  

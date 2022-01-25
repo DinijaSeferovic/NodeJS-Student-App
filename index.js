@@ -67,6 +67,7 @@ app.get('/vjezbe', function (req, res) {
 
 
 app.post('/vjezbe',function(req,res){
+
     let tijelo = req.body;
     
     let brojVjezbi = tijelo['brojVjezbi'];
@@ -109,12 +110,10 @@ app.post('/vjezbe',function(req,res){
         
         Promise.all(zadaciListaPromisea).then(function(zadaciIzBaze){
             var zadaciPoVjezbama = [];
-
             
             let i,j,v;
             for (i = 0, v = 0, j = zadaciIzBaze.length; i < j, v<brojVjezbi; i += brojZadataka[v], v++) {
                 zadaciPoVjezbama[v] = zadaciIzBaze.slice(i, i + brojZadataka[v]);
-                //console.log(zadaciPoVjezbama[v]);
             }
                 
             for (let i=0; i<brojVjezbi; i++) {
@@ -128,11 +127,99 @@ app.post('/vjezbe',function(req,res){
             }
             Promise.all(vjezbeListaPromisea).then(function(v){return v;}).catch(function(err){console.log("Vjezbe greska "+err);});
         }).catch(function(err){console.log("Zadaci greska "+err);});
-    console.log(res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka}));
+    res.json({brojVjezbi:brojVjezbi,brojZadataka:brojZadataka});
     }
     
 });
- 
+
+app.post('/student',function(req,res){
+
+    let tijelo = req.body;
+    
+    let ime = tijelo['ime'];
+    let prezime = tijelo['prezime'];
+    let index = tijelo['index'];
+    let grupa = tijelo['grupa'];
+    Grupa.findOrCreate({where: {naziv:grupa}}).then((tagGrupa) => {
+        Student.findOrCreate({where: {index: index}, defaults: {ime: ime, prezime: prezime, grupaId: tagGrupa[0].id}}).then((tag) => {
+            if (tag[1]) {
+                res.json({status:"Kreiran student!"});
+            }
+            else {
+                res.json({status:"Student sa indexom "+index.toString()+" već postoji!"});
+            }
+            
+        });
+    });
+    
+});
+
+
+app.put('/student/:index',function(req,res){
+
+    let tijelo = req.body;
+    let grupa = tijelo['grupa'];
+    let index = req.params.index;
+    
+    Grupa.findOrCreate({where: {naziv:grupa}}).then((tagGrupa) => {
+        Student.update({ grupaId: tagGrupa[0].id }, {where: { index: index }}).then(result => {
+            if (result==1) {
+                res.json({status:"Promjenjena grupa studentu "+ index.toString()});
+            }
+            else {
+                res.json({status:"Student sa indexom "+ index.toString()+ " ne postoji"});
+            }
+        });
+    });
+});
+
+app.use(bodyParser.text());
+
+app.post('/batch/student',function(req,res){
+
+    let csv = req.body;
+    
+    var lines = csv.split("\r\n");
+    let atributi = [];
+    var studentiListaPromisea=[];
+    var grupeListaPromisea=[];
+    let dodani = 0;
+    let indexPostoji = "";
+
+    for (let i=0; i<lines.length; i++) {
+        atributi[i] = lines[i].split(",");
+        grupeListaPromisea.push(Grupa.findOrCreate({where: {naziv: atributi[i][3]}}));
+    }
+
+    Promise.all(grupeListaPromisea).then(function(grupeIzBaze){
+
+        for (let i=0; i<atributi.length; i++) {
+
+            let grupa = grupeIzBaze.find( g => g[0].naziv==atributi[i][3])[0];
+
+            studentiListaPromisea.push(Student.findOrCreate({where: {index: atributi[i][2]},  defaults: {ime: atributi[i][0], prezime: atributi[i][1], grupaId: grupa.id}}).then(function(s){
+                    return new Promise(function(resolve,reject){resolve(s);reject("");
+                    });
+                })
+            );
+        }
+        Promise.all(studentiListaPromisea).then(function(studenti){
+
+            studenti.forEach(s => {
+                if (s[1]) dodani++;
+                else if (s!=studenti[studenti.length-1]) indexPostoji+=s[0].index.toString()+",";
+                else indexPostoji+=s[0].index.toString()
+            });
+
+            if (indexPostoji=="") {
+                res.json({status:"Dodano " + dodani.toString() + " studenata!"});
+            }
+            else {
+                res.json({status:"Dodano " + dodani.toString() + " studenata, a studenti "+indexPostoji+ " već postoje!"});
+            }
+        return studenti;}).catch(function(err){console.log("Grupe greska "+err);});
+        }).catch(function(err){console.log("Studenti greska "+err);});
+});
 
 app.listen(3000);
   

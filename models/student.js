@@ -10,7 +10,7 @@ module.exports = function(sequelize,DataTypes){
         },
         ime:Sequelize.TEXT,
         prezime:Sequelize.TEXT,
-        indeks:Sequelize.TEXT
+        index:Sequelize.TEXT
     })
     return Student;
 };

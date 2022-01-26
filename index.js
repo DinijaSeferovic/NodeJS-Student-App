@@ -107,12 +107,11 @@ app.post('/vjezbe',function(req,res){
                 );
             }
         }
-        
         Promise.all(zadaciListaPromisea).then(function(zadaciIzBaze){
             var zadaciPoVjezbama = [];
             
             let i,j,v;
-            for (i = 0, v = 0, j = zadaciIzBaze.length; i < j, v<brojVjezbi; i += brojZadataka[v], v++) {
+            for (i = 0, v = 0, j = zadaciIzBaze.length; i < j, v<brojVjezbi; i += parseInt(brojZadataka[v]), v++) {
                 zadaciPoVjezbama[v] = zadaciIzBaze.slice(i, i + brojZadataka[v]);
             }
                 

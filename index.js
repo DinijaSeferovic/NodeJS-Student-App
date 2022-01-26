@@ -139,18 +139,22 @@ app.post('/student',function(req,res){
     let prezime = tijelo['prezime'];
     let index = tijelo['index'];
     let grupa = tijelo['grupa'];
-    Grupa.findOrCreate({where: {naziv:grupa}}).then((tagGrupa) => {
-        Student.findOrCreate({where: {index: index}, defaults: {ime: ime, prezime: prezime, grupaId: tagGrupa[0].id}}).then((tag) => {
-            if (tag[1]) {
-                res.json({status:"Kreiran student!"});
-            }
-            else {
-                res.json({status:"Student sa indexom "+index.toString()+" već postoji!"});
-            }
-            
-        });
-    });
-    
+    Student.findOne({where: {index: index}}).then((s) => {
+        if (s==null) {
+            Grupa.findOrCreate({where: {naziv:grupa}}).then((tagGrupa) => {
+                Student.findOrCreate({where: {index: index}, defaults: {ime: ime, prezime: prezime, grupaId: tagGrupa[0].id}}).then((tag) => {
+                    if (tag[1]) {
+                        res.json({status:"Kreiran student!"});
+                    }
+                    
+                });
+            });
+        }
+        else {
+            res.json({status:"Student sa indexom "+index.toString()+" već postoji!"});
+        }
+        
+    });   
 });
 
 
@@ -160,17 +164,24 @@ app.put('/student/:index',function(req,res){
     let grupa = tijelo['grupa'];
     let index = req.params.index;
     
-    Grupa.findOrCreate({where: {naziv:grupa}}).then((tagGrupa) => {
-        Student.update({ grupaId: tagGrupa[0].id }, {where: { index: index }}).then(result => {
-            if (result==1) {
-                res.json({status:"Promjenjena grupa studentu "+ index.toString()});
-            }
-            else {
-                res.json({status:"Student sa indexom "+ index.toString()+ " ne postoji"});
-            }
-        });
+    Student.findOne({where: {index: index}}).then((s) => {
+        if (s!==null) {
+            Grupa.findOrCreate({where: {naziv:grupa}}).then((tagGrupa) => {
+                Student.update({ grupaId: tagGrupa[0].id }, {where: { index: index }}).then(result => {
+                    if (result==1) {
+                        res.json({status:"Promjenjena grupa studentu "+ index.toString()});
+                    }
+                    
+                });
+            });
+        }
+        else {
+            res.json({status:"Student sa indexom "+ index.toString()+ " ne postoji"});
+        }
+    
     });
 });
+
 
 app.use(bodyParser.text());
 
@@ -222,9 +233,11 @@ app.post('/batch/student',function(req,res){
             else {
                 res.json({status:"Dodano " + dodani.toString() + " studenata, a studenti "+indexPostoji+ " već postoje!"});
             }
-        return studenti;}).catch(function(err){console.log("Grupe greska "+err);});
-        }).catch(function(err){console.log("Studenti greska "+err);});
+        return studenti;}).catch(function(err){console.log("Studenti greska "+err);});
+        }).catch(function(err){console.log("Grupe greska "+err);});
 });
+
+
 
 app.listen(3000);
   

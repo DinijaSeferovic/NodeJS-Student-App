@@ -178,7 +178,13 @@ app.post('/batch/student',function(req,res){
 
     let csv = req.body;
     
-    var lines = csv.split("\r\n");
+    var lines = [];
+    if (csv.includes("\r")) {
+        lines = csv.split("\r\n");
+    }
+    else {
+        lines = csv.split("\n");
+    }
     let atributi = [];
     var studentiListaPromisea=[];
     var grupeListaPromisea=[];

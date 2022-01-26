@@ -4,14 +4,14 @@ window.onload=function(){
     let prezime = document.getElementById("prezime");
     let index = document.getElementById("index");
     let grupa = document.getElementById("grupa");
-    let ajaxstatus = document.getElementById("ajaxstatus");
+    let statustext = document.getElementById("statustext");
     
     document.getElementById("potvrda").addEventListener("click",function(){
         let student = {ime: ime.value, prezime: prezime.value, index: index.value, grupa: grupa.value};
             
         dodajStudenta(student, function(error, data){ 
             if (error==null) {
-                ajaxstatus.innerHTML = data.status;
+                statustext.innerHTML = data.status;
             } else {
                 console.log(data);
             }

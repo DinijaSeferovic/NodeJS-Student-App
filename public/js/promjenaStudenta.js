@@ -2,14 +2,14 @@ window.onload=function(){
 
     let index = document.getElementById("index");
     let grupa = document.getElementById("grupa");
-    let ajaxstatus = document.getElementById("ajaxstatus");
+    let statustext = document.getElementById("statustext");
     
     document.getElementById("potvrda").addEventListener("click",function(){
         let novaGrupa = {grupa: grupa.value};
 
         postaviGrupu(index.value, novaGrupa, function(error, data){ 
             if (error==null) {
-                ajaxstatus.innerHTML = data.status;
+                statustext.innerHTML = data.status;
             } else {
                 console.log(data);
             }

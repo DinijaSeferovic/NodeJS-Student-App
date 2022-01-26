@@ -28,6 +28,7 @@ h1 {
   );
   border-radius: 2rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .container input {
@@ -36,7 +37,7 @@ h1 {
   border-color: #acabaf;
 }
 
-.container label, #ajaxstatus {
+.container label, #statustext {
   font-family: "Trebuchet MS", Verdana, sans-serif;
   color: #451f77;
   align-self: center;

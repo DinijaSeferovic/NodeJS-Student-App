@@ -62,6 +62,7 @@
   "version": "1.1.2",
   "dependencies": {
     "chai-dom": "^1.11.0",
+    "chai-http": "^4.3.0",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.13.0",

@@ -1,10 +1,8 @@
-const Sequelize = require('sequelize');
-const sequelize = require('./db.js');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const fs = require('fs');
 const app = express();
+const db = require('./db.js');
 
 app.use(bodyParser.json());
 
@@ -15,20 +13,16 @@ app.use(express.static('public/css'));
 app.use(express.static('public/images'));
 app.use(express.static('public/test'));
 
-//import modela
-const Student = require('./models/student.js')(sequelize);
-const Grupa = require('./models/grupa.js')(sequelize);
-const Vjezba = require('./models/vjezba.js')(sequelize);
-const Zadatak = require('./models/zadatak.js')(sequelize);
-
-//relacije
-Grupa.hasMany(Student, {foreignKey:'grupaId', as:'studentiGrupe'})
-Vjezba.hasMany(Zadatak, {foreignKey:'vjezbaId', as:'zadaciVjezbe', onDelete: 'cascade', hooks:true})
+const Student = db.Student;
+const Grupa = db.Grupa;
+const Vjezba = db.Vjezba;
+const Zadatak = db.Zadatak;
 
 Student.sync();
 Grupa.sync();
 Vjezba.sync();
 Zadatak.sync();
+
 
 app.get('/vjezbe', function (req, res) {
 
@@ -240,5 +234,7 @@ app.post('/batch/student',function(req,res){
 
 
 app.listen(3000);
+
+module.exports = app;
   
 
